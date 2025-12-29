@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu bản thân & Thời khóa biểu</title>
+    <style>
+        /* Thiết lập font chữ và màu nền tổng thể */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Định dạng phần giới thiệu */
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background-color: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        /* Định dạng bảng thời khóa biểu */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e1f5fe;
+            transition: 0.3s;
+        }
+
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <section>
+        <h1>Giới thiệu bản thân</h1>
+        <div class="profile-info">
+            <div class="avatar">G</div> <div>
+                <p><strong>Họ và tên:</strong> Nguyễn Văn A</p>
+                <p><strong>Ngày sinh:</strong> 01/01/2005</p>
+                <p><strong>Sở thích:</strong> Lập trình, Đọc sách và Nghe nhạc.</p>
+                <p><strong>Mục tiêu:</strong> Trở thành một Fullstack Developer chuyên nghiệp.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Thời khóa biểu học tập</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Thứ 2</th>
+                    <th>Thứ 3</th>
+                    <th>Thứ 4</th>
+                    <th>Thứ 5</th>
+                    <th>Thứ 6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Toán học</td>
+                    <td>Tiếng Anh</td>
+                    <td>Lập trình</td>
+                    <td>Toán học</td>
+                    <td>Kỹ năng mềm</td>
+                </tr>
+                <tr>
+                    <td>Vật lý</td>
+                    <td><span class="highlight">HTML/CSS</span></td>
+                    <td>Đồ họa</td>
+                    <td>Tiếng Anh</td>
+                    <td>Dự án nhóm</td>
+                </tr>
+                <tr>
+                    <td>Tự học</td>
+                    <td>Thể dục</td>
+                    <td>Tự học</td>
+                    <td>Lập trình</td>
+                    <td>Nghỉ ngơi</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+
+</body>
+</html>
