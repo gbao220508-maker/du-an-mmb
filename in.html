@@ -1,24 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <meta charset="utf-8">
-    <title>Chương trình Tin học</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương trình Tin học 12</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .chapter {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .chapter:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dotted #eee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .empty-chapter {
+            color: #95a5a6;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>CHƯƠNG TRÌNH TIN HỌC</h1>
+<header>
+    <h1>CHƯƠNG TRÌNH TIN HỌC 12</h1>
+    <p>Hệ thống kiến thức trọng tâm cho năm học</p>
+</header>
 
-    <ol type="A">
-        <li>GIỚI THIỆU TRÍ TUỆ NHÂN TẠO, HỌC MÁY VÀ KHOA HỌC DỮ LIỆU
-            <ul>
-                <li>Giới thiệu về trí tuệ nhân tạo</li>
-                <li>Sử dụng AI trong học tập và đời sống</li>
-            </ul>
-        </li>
+<main>
+    <section class="chapter">
+        <h2>A. TRÍ TUỆ NHÂN TẠO (AI), HỌC MÁY VÀ KHOA HỌC DỮ LIỆU</h2>
+        <ul>
+            <li>Giới thiệu về trí tuệ nhân tạo (AI)</li>
+            <li>Sử dụng AI trong học tập và đời sống</li>
+            <li>Giới thiệu về Học máy (Machine Learning) và Khoa học dữ liệu (Data Science)</li>
+            <li>Thực hành phân tích dữ liệu</li>
+        </ul>
+    </section>
 
-        <li>MẠNG MÁY TÍNH VÀ INTERNET
-            <ul>
-                <li></li> </ul>
-        </li>
-    </ol>
+    <section class="chapter">
+        <h2>B. MẠNG MÁY TÍNH VÀ INTERNET</h2>
+        <ul>
+            <li>Cơ sở về mạng máy tính</li>
+            <li>Các giao thức mạng (TCP/IP, HTTP,...)</li>
+            <li>Đường truyền hữu tuyến và vô tuyến</li>
+            <li>Thiết bị mạng (Router, Switch, Access Point)</li>
+            <li>Thiết kế mạng LAN</li>
+            <li>Thực hành thiết lập kết nối và sử dụng mạng</li>
+        </ul>
+    </section>
+
+    <section class="chapter">
+        <h2>D. ĐẠO ĐỨC, PHÁP LUẬT VÀ VĂN HOÁ TRONG MÔI TRƯỜNG SỐ</h2>
+        <ul>
+            <li>Giao tiếp và tính nhân văn trong ứng xử trên không gian mạng</li>
+        </ul>
+    </section>
+
+    <section class="chapter">
+        <h2>F. TẠO TRANG WEB (HTML & CSS)</h2>
+        <ul>
+            <li>Làm quen với ngôn ngữ đánh dấu siêu văn bản (HTML)</li>
+            <li>Định dạng văn bản và tạo siêu liên kết</li>
+            <li>Trình bày nội dung theo dạng danh sách, bảng biểu</li>
+            <li>Chèn hình ảnh, âm thanh, video và sử dụng khung (Iframe)</li>
+            <li>Tạo biểu mẫu (Form)</li>
+            <li>Định dạng với CSS: Bộ chọn lớp (Class), bộ chọn định danh (ID)</li>
+            <li>Mô hình hộp (Box Model) và bố cục trang web</li>
+            <li><strong>Dự án nhỏ:</strong> Tạo trang web cá nhân/chủ đề</li>
+        </ul>
+    </section>
+
+    <section class="chapter">
+        <h2>G. HƯỚNG NGHIỆP VỚI TIN HỌC</h2>
+        <ul>
+            <li>Một số nghề ứng dụng CNTT và ngành thuộc lĩnh vực tin học</li>
+            <li>Dự án: Tìm hiểu thông tin tuyển sinh và hướng nghiệp</li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 - Tài liệu học tập Tin học 12</p>
+</footer>
 
 </body>
 </html>
