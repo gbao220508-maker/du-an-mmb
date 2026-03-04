@@ -1,83 +1,40 @@
+/* Thiết lập chung */
 body {
-    background-color: #202124; /* Màu xám đen đặc trưng của Meet */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
-/* 2. Khung trắng của Slide */
-.slide-container {
-    background-color: white;
-    width: 90%;
-    max-width: 900px;
-    aspect-ratio: 16 / 9; /* Tỉ lệ khung hình slide */
-    padding: 40px 60px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-radius: 8px;
-    box-sizing: border-box;
-    overflow: hidden;
+.container {
+    width: 100%;
+    margin: 0 auto;
 }
 
-/* 3. Tiêu đề chính (Màu đỏ đậm) */
-h1 {
-    color: #B22222; /* Crimson Red */
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* 4. Các mục lớn A, B, C, D... (Màu đỏ cam) */
-.category {
-    color: #E67E73; /* Màu đỏ cam nhạt */
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-/* 5. Danh sách các mục con */
-ul {
-    list-style-type: disc; /* Dấu chấm tròn */
-    margin-left: 50px;
-    margin-top: 5px;
-    color: #3c4043;
-}
-
-li {
-    font-size: 15px;
-    margin-bottom: 6px;
-    line-height: 1.4;
-}
+/* Style cho Banner chuyên nghiệp */
 .school-banner {
-    background: linear-gradient(90deg, #1a2a6c, #b21f1f); /* Chuyển màu từ xanh sang đỏ theo logo */
-    padding: 30px 0;
-    color: #ffffff;
-    border-bottom: 4px solid #ffcc00; /* Đường kẻ vàng tạo điểm nhấn */
+    background: linear-gradient(90deg, #1a2a6c, #b21f1f); /* Màu gradient theo logo */
+    padding: 20px 0;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .banner-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 25px;
 }
 
 .logo-area {
-    background: #fff;
+    background: white;
     padding: 10px;
-    border-radius: 50%; /* Làm logo tròn như trong ảnh gốc */
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    border-radius: 50%; /* Bo tròn logo giống hình mẫu */
+    display: flex;
+    align-items: center;
 }
 
 .main-logo {
-    height: 120px; /* Kích thước phù hợp cho banner */
-    display: block;
+    height: 100px; /* Điều chỉnh kích thước logo */
+    width: auto;
 }
 
 .text-area {
@@ -85,32 +42,47 @@ li {
 }
 
 .sub-title {
-    font-size: 1.1rem;
     margin: 0;
-    letter-spacing: 2px;
-    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 1px;
 }
 
 .main-title {
     margin: 5px 0 0 0;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 1.2;
 }
 
 .main-title span {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: bold;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #ffcc00; /* Màu vàng làm nổi bật tên trường */
 }
 
-/* Tương thích điện thoại */
-@media (max-width: 768px) {
-    .banner-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .text-area {
-        text-align: center;
-    }
+/* Style cho Menu */
+.menu {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.menu a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.menu a:hover {
+    background-color: #b21f1f;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
 }
