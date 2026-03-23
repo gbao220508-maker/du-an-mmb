@@ -2,24 +2,81 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Bài 7 - Nhiệm vụ 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Tạo Biểu Mẫu - Tin học 12</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+        form { max-width: 500px; margin: 0 auto; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        fieldset { border: 1px solid #ddd; padding: 15px; }
+        legend { font-weight: bold; color: #2c3e50; }
+        .section-title { font-weight: bold; margin-top: 15px; display: block; }
+        .input-group { margin-bottom: 10px; }
+        input[type="text"], textarea { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        .btn-submit { background-color: #3498db; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; }
+        .btn-submit:hover { background-color: #2980b9; }
+        
+        /* CSS cho phần thông báo (Nhiệm vụ 3) */
+        #thank-you-message {
+            display: none; /* Mặc định ẩn đi */
+            text-align: center;
+            background-color: #f0f8ff;
+            border: 1px solid #add8e6;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-    <form>
+
+    <form id="feedbackForm" onsubmit="handleFormSubmit(event)">
         <fieldset>
             <legend>Đóng góp ý kiến cho thư viện nhà trường</legend>
             
-            <p>1. Thông tin về người góp ý</p>
-            <label>Họ và tên: </label>
-            <input type="text" name="txtHoTen"><br><br>
-            
-            <label>Địa chỉ email: </label>
-            <input type="text" name="txtEmail"><br>
+            <span class="section-title">1. Thông tin về người góp ý</span>
+            <div class="input-group">
+                <label for="txtName">Họ và tên:</label>
+                <input type="text" id="txtName" name="txtHoTen" required>
+            </div>
+            <div class="input-group">
+                <label for="txtEmail">Địa chỉ email:</label>
+                <input type="text" id="txtEmail" name="txtEmail" required>
+            </div>
 
-            <p>2. Đóng góp ý kiến</p>
-            <label>Ý kiến đóng góp: </label><br>
-            <textarea name="txtComment" rows="6" cols="40"></textarea>
+            <span class="section-title">2. Thể loại cần bổ sung thêm sách</span>
+            <input type="checkbox" name="genre" value="truyen-ngan"> Truyện ngắn <br>
+            <input type="checkbox" name="genre" value="ky-nang"> Kỹ năng sống <br>
+            <input type="checkbox" name="genre" value="cntt"> Công nghệ thông tin <br>
+            <input type="checkbox" name="genre" value="truyen-tranh"> Truyện tranh <br>
+            <input type="checkbox" name="genre" value="lich-su"> Lịch sử <br>
+
+            <span class="section-title">3. Ý kiến đóng góp</span>
+            <textarea name="txtComment" rows="5" placeholder="Nhập ý kiến của bạn tại đây..."></textarea>
+            
+            <br><br>
+            <button type="submit" class="btn-submit">Góp ý</button>
         </fieldset>
     </form>
+
+    <div id="thank-you-message">
+        <h3>Cảm ơn bạn đã góp ý kiến</h3>
+        <p>Chúng tôi trân trọng những ý kiến của bạn và sẽ cải tiến, nâng cao chất lượng phục vụ hơn trong thời gian sắp tới.</p>
+        <button onclick="resetForm()" style="margin-top: 10px;">Quay lại</button>
+    </div>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Ngăn trang web tải lại
+            document.getElementById('feedbackForm').style.display = 'none'; // Ẩn biểu mẫu
+            document.getElementById('thank-you-message').style.display = 'block'; // Hiện thông báo
+        }
+
+        function resetForm() {
+            document.getElementById('feedbackForm').reset();
+            document.getElementById('feedbackForm').style.display = 'block';
+            document.getElementById('thank-you-message').style.display = 'none';
+        }
+    </script>
+
 </body>
 </html>
