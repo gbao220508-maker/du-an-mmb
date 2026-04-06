@@ -5,26 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thực hành Tạo Biểu Mẫu - Tin học 12</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
-        form { max-width: 500px; margin: 0 auto; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
-        fieldset { border: 1px solid #ddd; padding: 15px; }
-        legend { font-weight: bold; color: #2c3e50; }
-        .section-title { font-weight: bold; margin-top: 15px; display: block; }
-        .input-group { margin-bottom: 10px; }
-        input[type="text"], textarea { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
-        .btn-submit { background-color: #3498db; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 20px; background-color: #f4f7f6; }
+        form { max-width: 500px; margin: 0 auto; border: 1px solid #ccc; padding: 20px; border-radius: 8px; background-color: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        fieldset { border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+        legend { font-weight: bold; color: #2c3e50; padding: 0 10px; }
+        .section-title { font-weight: bold; margin-top: 15px; display: block; color: #2980b9; }
+        .input-group { margin-bottom: 12px; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="text"], input[type="email"], textarea { width: 100%; padding: 10px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ddd; border-radius: 4px; }
+        .btn-submit { background-color: #3498db; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; width: 100%; font-size: 16px; transition: 0.3s; }
         .btn-submit:hover { background-color: #2980b9; }
         
-        /* CSS cho phần thông báo (Nhiệm vụ 3) */
         #thank-you-message {
-            display: none; /* Mặc định ẩn đi */
+            display: none;
+            max-width: 500px;
+            margin: 20px auto;
             text-align: center;
-            background-color: #f0f8ff;
-            border: 1px solid #add8e6;
-            padding: 20px;
-            margin-top: 20px;
+            background-color: #e8f4fd;
+            border: 1px solid #3498db;
+            padding: 30px;
             border-radius: 8px;
         }
+        #kq { font-weight: bold; color: #2c3e50; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -36,54 +38,60 @@
             <span class="section-title">1. Thông tin về người góp ý</span>
             <div class="input-group">
                 <label for="txtName">Họ và tên:</label>
-                <input type="text" id="txtName" name="txtHoTen" required>
+                <input type="text" id="txtName" name="txtHoTen" required placeholder="Nhập tên của bạn...">
             </div>
             <div class="input-group">
                 <label for="txtEmail">Địa chỉ email:</label>
-                <input type="text" id="txtEmail" name="txtEmail" required>
+                <input type="email" id="txtEmail" name="txtEmail" required placeholder="example@gmail.com">
             </div>
 
             <span class="section-title">2. Thể loại cần bổ sung thêm sách</span>
-            <input type="checkbox" name="genre" value="truyen-ngan"> Truyện ngắn <br>
-            <input type="checkbox" name="genre" value="ky-nang"> Kỹ năng sống <br>
-            <input type="checkbox" name="genre" value="cntt"> Công nghệ thông tin <br>
-            <input type="checkbox" name="genre" value="truyen-tranh"> Truyện tranh <br>
-            <input type="checkbox" name="genre" value="lich-su"> Lịch sử <br>
+            <div style="margin: 10px 0;">
+                <input type="checkbox" name="genre" value="truyen-ngan"> Truyện ngắn <br>
+                <input type="checkbox" name="genre" value="ky-nang"> Kỹ năng sống <br>
+                <input type="checkbox" name="genre" value="cntt"> Công nghệ thông tin <br>
+                <input type="checkbox" name="genre" value="truyen-tranh"> Truyện tranh <br>
+                <input type="checkbox" name="genre" value="lich-su"> Lịch sử <br>
+            </div>
 
             <span class="section-title">3. Ý kiến đóng góp</span>
-            <textarea name="txtComment" rows="5" placeholder="Nhập ý kiến của bạn tại đây..."></textarea>
+            <textarea id="txtComment" name="txtComment" rows="5" placeholder="Nhập ý kiến của bạn tại đây..."></textarea>
             
             <br><br>
-            <button type="submit" class="btn-submit">Góp ý</button>
+            <button type="submit" class="btn-submit">Gửi ý kiến đóng góp</button>
         </fieldset>
     </form>
 
     <div id="thank-you-message">
-        <h3>Cảm ơn bạn đã góp ý kiến</h3>
-        <p>Chúng tôi trân trọng những ý kiến của bạn và sẽ cải tiến, nâng cao chất lượng phục vụ hơn trong thời gian sắp tới.</p>
-        <button onclick="resetForm()" style="margin-top: 10px;">Quay lại</button>
+        <div style="font-size: 50px;">✉️</div>
+        <h3>Cảm ơn bạn đã góp ý kiến!</h3>
+        <p id="kq"></p>
+        <p>Chúng tôi trân trọng những đóng góp của bạn để cải tiến thư viện.</p>
+        <button onclick="resetForm()" style="padding: 8px 15px; cursor: pointer;">Quay lại</button>
     </div>
 
     <script>
         function handleFormSubmit(event) {
-            event.preventDefault(); // Ngăn trang web tải lại
-            document.getElementById('feedbackForm').style.display = 'none'; // Ẩn biểu mẫu
-            document.getElementById('thank-you-message').style.display = 'block'; // Hiện thông báo
+            event.preventDefault(); // Chặn việc tải lại trang
+
+            // Lấy giá trị từ các ô nhập liệu
+            let ten = document.getElementById('txtName').value;
+            let email = document.getElementById('txtEmail').value;
+
+            // Ẩn form và hiện thông báo
+            document.getElementById('feedbackForm').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+
+            // Hiển thị lời chào cá nhân hóa
+            document.getElementById("kq").innerHTML = "Chào " + ten + " (" + email + "), chúng tôi đã nhận được phản hồi của bạn.";
         }
 
         function resetForm() {
-            document.getElementById('feedbackForm').reset();
+            document.getElementById('feedbackForm').reset(); // Xóa trắng form
             document.getElementById('feedbackForm').style.display = 'block';
             document.getElementById('thank-you-message').style.display = 'none';
         }
     </script>
-    <p id="kq"> </p>
-<script>
-    let params = new URLSearchParams(window.location.search);
-    let ten = params.get("txtName");
-    let yk = params.get("txtYk");
-    document.getElementById("kq").innerHTML = "Cảm ơn bạn " + ten
-        + " đã góp ý" + "<br><br>Chúng tôi xin ghi nhận ý kiến của bạn"
-</script>
+
 </body>
 </html>
